@@ -1,6 +1,6 @@
 class NegociosController < ApplicationController
   before_action :set_negocio, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
   # GET /negocios
   # GET /negocios.json
   def index
