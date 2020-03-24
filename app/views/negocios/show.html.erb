@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @negocio.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @negocio.descricao %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @negocio.site %>
+</p>
+
+<%= link_to 'Edit', edit_negocio_path(@negocio) %> |
+<%= link_to 'Back', negocios_path %>
