@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get 'home', to: 'home#show'
   get 'me', to: 'me#show', as: 'me'
 
-  root 'welcome#index'
+  root 'negocios#index'
 end

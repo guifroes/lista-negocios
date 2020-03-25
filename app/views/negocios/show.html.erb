@@ -15,5 +15,10 @@
   <%= @negocio.site %>
 </p>
 
+<p>
+  <strong>Dono:</strong>
+  <%= @negocio.user.nome %>
+</p>
+
 <%= link_to 'Edit', edit_negocio_path(@negocio) %> |
 <%= link_to 'Back', negocios_path %>

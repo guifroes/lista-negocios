@@ -25,7 +25,7 @@ class NegociosController < ApplicationController
   # POST /negocios.json
   def create
     @negocio = Negocio.new(negocio_params)
-
+    @negocio.user = current_user
     respond_to do |format|
       if @negocio.save
         format.html { redirect_to @negocio, notice: 'Negocio was successfully created.' }
