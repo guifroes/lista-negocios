@@ -20,6 +20,41 @@
   <%= @negocio.user.nome %>
 </p>
 
+<p>
+  <strong>CEP:</strong>
+  <%= @negocio.cep %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @negocio.logradouro %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @negocio.numero %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @negocio.complemento %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @negocio.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @negocio.cidade %>
+</p>
+
+<p>
+  <strong>UF:</strong>
+  <%= @negocio.estado %>
+</p>
+
 <% if is_current_user_owner(@negocio) %>
   <%= link_to 'Edit', edit_negocio_path(@negocio) %> |
 <% end %>

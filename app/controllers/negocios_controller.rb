@@ -56,10 +56,12 @@ class NegociosController < ApplicationController
   # DELETE /negocios/1
   # DELETE /negocios/1.json
   def destroy
-    @negocio.destroy
-    respond_to do |format|
-      format.html { redirect_to negocios_url, notice: 'Negocio was successfully destroyed.' }
-      format.json { head :no_content }
+    if is_current_user_owner(@negocio)
+      @negocio.destroy
+      respond_to do |format|
+        format.html { redirect_to negocios_url, notice: 'Negocio was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -71,6 +73,6 @@ class NegociosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def negocio_params
-      params.require(:negocio).permit(:nome, :descricao, :site)
+      params.require(:negocio).permit(:nome, :descricao, :site, :cep, :logradouro, :numero, :complemento, :bairro, :cidade, :estado)
     end
 end
