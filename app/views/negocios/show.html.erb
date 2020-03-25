@@ -20,5 +20,9 @@
   <%= @negocio.user.nome %>
 </p>
 
-<%= link_to 'Edit', edit_negocio_path(@negocio) %> |
+<% if is_current_user_owner(@negocio) %>
+  <%= link_to 'Edit', edit_negocio_path(@negocio) %> |
+<% end %>
+
+
 <%= link_to 'Back', negocios_path %>

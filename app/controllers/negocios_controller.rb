@@ -40,13 +40,15 @@ class NegociosController < ApplicationController
   # PATCH/PUT /negocios/1
   # PATCH/PUT /negocios/1.json
   def update
-    respond_to do |format|
-      if @negocio.update(negocio_params)
-        format.html { redirect_to @negocio, notice: 'Negocio was successfully updated.' }
-        format.json { render :show, status: :ok, location: @negocio }
-      else
-        format.html { render :edit }
-        format.json { render json: @negocio.errors, status: :unprocessable_entity }
+    if is_current_user_owner(@negocio)
+      respond_to do |format|
+        if @negocio.update(negocio_params)
+          format.html { redirect_to @negocio, notice: 'Negocio was successfully updated.' }
+          format.json { render :show, status: :ok, location: @negocio }
+        else
+          format.html { render :edit }
+          format.json { render json: @negocio.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
