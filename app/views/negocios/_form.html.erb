@@ -31,6 +31,8 @@
     <%= form.text_field :cep %>
   </div>
 
+  <%= link_to "Validar CEP", root_path, remote: true %>
+
   <div class="field">
     <%= form.label :logradouro %>
     <%= form.text_field :logradouro %>
