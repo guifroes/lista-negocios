@@ -15,16 +15,19 @@ class NegociosController < ApplicationController
   # GET /negocios/new
   def new
     @negocio = Negocio.new
+    @categorias = Categoria.all.map { |cat| [cat.nome, cat.id] }
   end
 
   # GET /negocios/1/edit
   def edit
+    @categorias = Categoria.all.map { |cat| [cat.nome, cat.id] }
   end
 
   # POST /negocios
   # POST /negocios.json
   def create
     @negocio = Negocio.new(negocio_params)
+    @negocio.categoria_id = params[:categoria_id]
     @negocio.user = current_user
     respond_to do |format|
       if @negocio.save
@@ -42,6 +45,7 @@ class NegociosController < ApplicationController
   def update
     if is_current_user_owner(@negocio)
       respond_to do |format|
+        @negocio.categoria_id = params[:categoria_id]
         if @negocio.update(negocio_params)
           format.html { redirect_to @negocio, notice: 'Negocio was successfully updated.' }
           format.json { render :show, status: :ok, location: @negocio }

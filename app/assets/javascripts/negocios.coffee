@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $("a[data-remote]").on "click", (event) ->
+  $("button[data-remote]").on "click", (event) ->
     console.log("asasfdas")
     $.ajax({
         # //O campo URL diz o caminho de onde virá os dados

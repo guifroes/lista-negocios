@@ -1,69 +1,102 @@
-<%= form_with(model: negocio, local: true) do |form| %>
-  <% if negocio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(negocio.errors.count, "error") %> prohibited this negocio from being saved:</h2>
+<div class="container">
+  <%= form_with(model: negocio, local: true, class: "text-left") do |form| %>
+    <% if negocio.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(negocio.errors.count, "error") %> prohibited this negocio from being saved:</h2>
 
-      <ul>
-      <% negocio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% negocio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, class: "form-control mb-2" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label :categoria %><br>
+      <%= select_tag(:categoria_id, options_for_select(@categorias, @negocio.categoria_id), class: "form-control" )%>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :descricao %>
+      <%= form.text_field :descricao, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :site %>
+      <%= form.text_field :site, class: "form-control" %>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label>CEP (somente números)</label>
+          <div class="input-group sm-4">
+            <input id="negocio_cep" type="text" class="form-control">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" data-remote="true">Validar CEP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= form.label :logradouro %>
+          <%= form.text_field :logradouro, readonly: "true", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label>Número</label>
+          <%= form.text_field :numero, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :complemento %>
+          <%= form.text_field :complemento, class: "form-control" %>
+        </div>
+       </div> 
+    </div>  
+    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :bairro %>
+          <%= form.text_field :bairro, readonly: "true", class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :cidade %>
+          <%= form.text_field :cidade, readonly: "true", class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :estado %>
+          <%= form.text_field :estado, readonly: "true", class: "form-control" %>
+        </div>
+      </div>
+     </div> 
+
+
+    
+    <div class="actions">
+      <%= form.submit value: "Salvar", class: "btn btn-lg btn-primary"%>
+      <%= link_to "Cancelar", negocio, class: "btn btn-lg btn-secondary"%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
-  </div>
-
-  <div class="field">
-    <%= form.label :descricao %>
-    <%= form.text_field :descricao %>
-  </div>
-
-  <div class="field">
-    <%= form.label :site %>
-    <%= form.text_field :site %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cep %>
-    <%= form.text_field :cep %>
-  </div>
-
-  <%= link_to "Validar CEP", root_path, remote: true %>
-
-  <div class="field">
-    <%= form.label :logradouro %>
-    <%= form.text_field :logradouro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :numero %>
-    <%= form.text_field :numero %>
-  </div>
-
-  <div class="field">
-    <%= form.label :complemento %>
-    <%= form.text_field :complemento %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bairro %>
-    <%= form.text_field :bairro %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cidade %>
-    <%= form.text_field :cidade %>
-  </div>
-
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
