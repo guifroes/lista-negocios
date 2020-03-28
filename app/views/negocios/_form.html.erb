@@ -12,45 +12,91 @@
       </div>
     <% end %>
 
-    <div class="form-group">
-      <%= form.label :nome %>
-      <%= form.text_field :nome, class: "form-control mb-2" %>
-    </div>
-
-
-    <div class="form-group">
-      <%= form.label :categoria %><br>
-      <%= select_tag(:categoria_id, options_for_select(@categorias, @negocio.categoria_id), class: "form-control" )%>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :descricao %>
-      <%= form.text_field :descricao, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= form.label :site %>
-      <%= form.text_field :site, class: "form-control" %>
-    </div>
-
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-4">
         <div class="form-group">
-          <label>CEP (somente números)</label>
-          <div class="input-group sm-4">
-            <input id="negocio_cep" type="text" class="form-control">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button" data-remote="true">Validar CEP</button>
+          <%= form.label :nome %>
+          <%= form.text_field :nome, class: "form-control mb-2" %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= form.label :categoria %><br>
+          <%= select_tag(:categoria_id, options_for_select(@categorias, @negocio.categoria_id), class: "form-control" )%>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="form-group">
+          <label>Site (opcional)</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">https://</span>
             </div>
+            <%= form.text_field :site, class: "form-control" %>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-3">
         <div class="form-group">
-          <%= form.label :logradouro %>
+          <label>Facebook (opcional)</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">fb.com/</span>
+            </div>
+            <%= form.text_field :facebook, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Instagram (opcional)</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">@</span>
+            </div>
+            <%= form.text_field :instagram, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Whatsapp (opcional)</label>
+          <%= form.text_field :whatsapp, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>Telefone (opcional)</label>
+          <%= form.text_field :telefone, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Fale sobre seu negócio. Use esse espaço para vender seu produto ou serviço! </label>
+      <%= form.text_area :descricao, class: "form-control" %>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label>CEP (somente números)</label>
+          <div class="input-group sm-4">
+            <%= form.text_field :cep, class: "form-control" %>
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" data-remote="true">Validar CEP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label>Endereço</label>
           <%= form.text_field :logradouro, readonly: "true", class: "form-control" %>
         </div>
       </div>
@@ -62,7 +108,7 @@
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="form-group">
           <%= form.label :complemento %>
           <%= form.text_field :complemento, class: "form-control" %>
@@ -90,10 +136,8 @@
           <%= form.text_field :estado, readonly: "true", class: "form-control" %>
         </div>
       </div>
-     </div> 
+    </div> 
 
-
-    
     <div class="actions">
       <%= form.submit value: "Salvar", class: "btn btn-lg btn-primary"%>
       <%= link_to "Cancelar", negocio, class: "btn btn-lg btn-secondary"%>

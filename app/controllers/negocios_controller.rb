@@ -77,6 +77,7 @@ class NegociosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def negocio_params
-      params.require(:negocio).permit(:nome, :descricao, :site, :cep, :logradouro, :numero, :complemento, :bairro, :cidade, :estado)
+      params.require(:negocio).permit(:nome, :descricao, :site, :cep, :logradouro, 
+        :numero, :complemento, :bairro, :cidade, :estado, :categoria_id, :facebook, :instagram, :whatsapp, :telefone)
     end
 end
