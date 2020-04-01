@@ -131,5 +131,3 @@ Categoria.create( nome: "Tarifas Bancárias")
 Categoria.create( nome: "Tarifas Telefônicas")
 Categoria.create( nome: "Telefonia")
 Categoria.create( nome: "Turismo")
-
-
