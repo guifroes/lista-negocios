@@ -82,19 +82,19 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="form-group">
           <label>CEP (somente números)</label>
           <div class="input-group sm-4">
             <%= form.text_field :cep, class: "form-control" %>
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button" data-remote="true">Validar CEP</button>
+              <button class="btn btn-primary" type="button" data-remote="true">Preencher endereço</button>
             </div>
           </div>
         </div>
       </div>
     
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="form-group">
           <label>Endereço</label>
           <%= form.text_field :logradouro, readonly: "true", class: "form-control" %>
