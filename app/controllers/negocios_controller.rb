@@ -31,11 +31,9 @@ class NegociosController < ApplicationController
     @negocio.user = current_user
     respond_to do |format|
       if @negocio.save
-        format.html { redirect_to @negocio, notice: 'Negocio was successfully created.' }
-        format.json { render :show, status: :created, location: @negocio }
+        format.html { redirect_to negocios_path, notice: 'Negócio criado com sucesso.' }
       else
         format.html { render :new }
-        format.json { render json: @negocio.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -47,11 +45,9 @@ class NegociosController < ApplicationController
       respond_to do |format|
         @negocio.categoria_id = params[:categoria_id]
         if @negocio.update(negocio_params)
-          format.html { redirect_to @negocio, notice: 'Negocio was successfully updated.' }
-          format.json { render :show, status: :ok, location: @negocio }
+          format.html { redirect_to negocios_path notice: 'Negócio alterado com sucesso.' }
         else
           format.html { render :edit }
-          format.json { render json: @negocio.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -63,7 +59,7 @@ class NegociosController < ApplicationController
     if is_current_user_owner(@negocio)
       @negocio.destroy
       respond_to do |format|
-        format.html { redirect_to negocios_url, notice: 'Negocio was successfully destroyed.' }
+        format.html { redirect_to negocios_url, notice: 'Negócio apagado com sucesso.' }
         format.json { head :no_content }
       end
     end
