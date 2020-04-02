@@ -2,15 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$ ->
-  $("a[data-remote]").on "click", (event) ->
-    $.ajax({
-        url: "https://viacep.com.br/ws/" + $("#negocio_cep").val() + "/json/unicode/",
-        dataType: 'json',
-        success: (resposta) ->
-            $("#negocio_logradouro").val(resposta.logradouro)
-            $("#negocio_bairro").val(resposta.bairro)
-            $("#negocio_cidade").val(resposta.localidade)
-            $("#negocio_estado").val(resposta.uf)
-        })
+$(document).on 'turbolinks:load', ->
+  $ ->
+    $("button[data-remote]").on "click", (event) ->
+      $.ajax({
+          url: "https://viacep.com.br/ws/" + $("#negocio_cep").val() + "/json/unicode/",
+          dataType: 'json',
+          success: (resposta) ->
+              $("#negocio_logradouro").val(resposta.logradouro)
+              $("#negocio_complemento").val(resposta.complemento)
+              $("#negocio_bairro").val(resposta.bairro)
+              $("#negocio_cidade").val(resposta.localidade)
+              $("#negocio_estado").val(resposta.uf)
+              $("#negocio_numero").focus()
+          })
+  return
+
 		
