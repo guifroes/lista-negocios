@@ -49,6 +49,7 @@ namespace :db do
 
   desc "TODO"
   task deletar_exemplos: :environment do
+    Negocio.destroy_all
   end
 
 end
