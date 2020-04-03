@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def is_current_user_owner(negocio)
-        negocio.user == @current_user
+        negocio.user == current_user
     end
   
     def user_signed_in?
