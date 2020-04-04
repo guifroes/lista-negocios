@@ -5,6 +5,9 @@ class NegociosController < ApplicationController
   # GET /negocios.json
   def index
     @negocios = Negocio.all
+    
+    estados = Negocio.all.map {|n| n.estado }
+    @estados = estados.uniq - ["", nil]
   end
 
   # GET /negocios/1
