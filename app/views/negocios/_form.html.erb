@@ -20,6 +20,7 @@
             class: "form-control mb-2", 
             required: true, 
             oninvalid: "this.setCustomValidity('O nome deve ser informado')",
+            oninput: "this.setCustomValidity('')",
             maxlength: 80 %>
         </div>
       </div>
@@ -144,7 +145,7 @@
 
     <div class="actions">
       <%= form.submit "Salvar", class: "btn btn-lg btn-primary"%>
-      <%= link_to "Cancelar", negocio, class: "btn btn-lg btn-secondary"%>
+      <%= link_to "Cancelar", negocios_path, class: "btn btn-lg btn-secondary"%>
     </div>
   <% end %>
 </div>
