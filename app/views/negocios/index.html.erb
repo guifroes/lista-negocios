@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-6">
             <% if negocio.site && !negocio.site.empty? %>
-              <a href="https://<%= negocio.site %>"/" >
+              <a href="https://<%= negocio.site %>"/" target="_blank" >
                 <i class="fas fa-globe-americas"></i>
                 <label><%= negocio.site %></label>
               </a>
@@ -19,7 +19,7 @@
           </div>
           <div class="col-6">
           <% if negocio.email && !negocio.email.empty? %>
-              <a href="mailto:<%= negocio.instagram %>"/" >
+              <a href="mailto:<%= negocio.email %>" >
               <i class="far fa-envelope"></i>
               <label><%= negocio.email %></label>
             </a>
@@ -30,7 +30,7 @@
         <div class="row">
           <div class="col-6">
             <% if negocio.facebook && !negocio.facebook.empty? %>
-              <a href="https://www.fb.com/<%= negocio.facebook %>"/" >
+              <a href="https://www.fb.com/<%= negocio.facebook %>"/" target="_blank">
                 <i class="fab fa-facebook-square"></i>
                 <label><%= negocio.facebook %></label>
               </a>
@@ -38,7 +38,7 @@
           </div>
           <div class="col-6">
           <% if negocio.instagram && !negocio.instagram.empty? %>
-            <a href="https://www.instagram.com/<%= negocio.instagram %>"/" >
+            <a href="https://www.instagram.com/<%= negocio.instagram %>"/" target="_blank" >
               <i class="fab fa-instagram"></i>
               <label><%= negocio.instagram %></label>
             </a>
