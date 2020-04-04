@@ -1,15 +1,17 @@
 <script>
 function validateForm() {
-  var x = document.forms["negocio"]["negocio_logradouro_hidden"].value;
+  var x = document.forms["negocio"]["negocio_logradouro"].value;
   if (x == "") {
     alert("O Endereço deve ser preenchido. Informe o CEP e clique \'Preencher endereço\'");
     return false;
+  } else {
+    return true;
   }
 }
 </script>
 
 <div class="container">
-  <%= form_with(name: "negocio", model: negocio, local: true, class: "text-left", onsubmit:"return validateForm()") do |form| %>
+  <%= form_with(model: negocio, local: true, class: "text-left", html: { onsubmit:"return validateForm();document.getElementByName('commit').disabled = false;", name: "negocio"}) do |form| %>
     <% if negocio.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(negocio.errors.count, "error") %> prohibited this negocio from being saved:</h2>
@@ -128,12 +130,7 @@ function validateForm() {
         <div class="form-group">
           <label>Endereço</label>
           <%= form.text_field :logradouro, 
-            class: "form-control",
-            readonly: true %>
-
-            <%= form.text_field :logradouro_hidden, 
-            class: "form-control",
-            hidden: true %>
+            class: "form-control" %>
         </div>
       </div>
 
@@ -175,7 +172,7 @@ function validateForm() {
     </div> 
 
     <div class="actions">
-      <%= form.submit "Salvar", class: "btn btn-lg btn-primary"%>
+      <%= form.submit "Salvar", class: "btn btn-lg btn-primary", id: "commit"   %>
       <%= link_to "Cancelar", negocios_path, class: "btn btn-lg btn-secondary"%>
     </div>
   <% end %>

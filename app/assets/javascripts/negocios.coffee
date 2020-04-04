@@ -10,12 +10,12 @@ $(document).on 'turbolinks:load', ->
           dataType: 'json',
           success: (resposta) ->
               $("#negocio_logradouro").val(resposta.logradouro)
-              $("#negocio_logradouro_hidden").val(resposta.logradouro)
               $("#negocio_complemento").val(resposta.complemento)
               $("#negocio_bairro").val(resposta.bairro)
               $("#negocio_cidade").val(resposta.localidade)
               $("#negocio_estado").val(resposta.uf)
               $("#negocio_numero").focus()
+              $("#commit").prop( "disabled", false )
           })
   return
 
