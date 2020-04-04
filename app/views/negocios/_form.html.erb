@@ -25,7 +25,7 @@ function validateForm() {
     <% end %>
 
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-sm-8">
         <div class="form-group">
           <%= form.label :nome %>
           <%= form.text_field :nome, 
@@ -36,7 +36,7 @@ function validateForm() {
             maxlength: 80 %>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <%= form.label :categoria %><br>
           <%= select_tag(:categoria_id, options_for_select(@categorias, @negocio.categoria_id), class: "form-control" )%>
@@ -47,7 +47,7 @@ function validateForm() {
 <div class="row">
 
 
-      <div class="col-sm-4"> 
+      <div class="col-sm-sm-4"> 
         <div class="form-group">
           <label>Site (opcional)</label>
           <div class="input-group mb-3">
@@ -58,13 +58,13 @@ function validateForm() {
           </div>
         </div>
       </div>
-      <div class="col-sm-4"> 
+      <div class="col-sm-sm-4"> 
         <div class="form-group">
           <label>Email (opcional)</label>
           <%= form.text_field :email, class: "form-control", maxlength: 80 %>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <label>Facebook (opcional)</label>
           <div class="input-group mb-3">
@@ -79,7 +79,7 @@ function validateForm() {
 
     <div class="row">
       
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <label>Instagram (opcional)</label>
           <div class="input-group mb-3">
@@ -90,13 +90,13 @@ function validateForm() {
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <label>Whatsapp (opcional)</label>
           <%= form.text_field :whatsapp, class: "form-control", maxlength: 80 %>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <label>Telefone (opcional)</label>
           <%= form.text_field :telefone, class: "form-control", maxlength: 80 %>
@@ -110,7 +110,7 @@ function validateForm() {
     </div>
 
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <label>CEP (somente números)</label>
           <div class="input-group sm-4">
@@ -126,7 +126,7 @@ function validateForm() {
         </div>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-sm-3">
         <div class="form-group">
           <label>Endereço</label>
           <%= form.text_field :logradouro, 
@@ -134,14 +134,14 @@ function validateForm() {
         </div>
       </div>
 
-      <div class="col-sm-2">
+      <div class="col-sm-sm-2">
         <div class="form-group">
           <label>Número (opcional)</label>
           <%= form.text_field :numero, class: "form-control", maxlength: 80 %>
         </div>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-sm-3">
         <div class="form-group">
           <label>Complemento (opcional)</label>
           <%= form.text_field :complemento, class: "form-control", maxlength: 80 %>
@@ -150,20 +150,20 @@ function validateForm() {
     </div>  
     
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <%= form.label :bairro %>
           <%= form.text_field :bairro, readonly: "true", class: "form-control" %>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <%= form.label :cidade %>
           <%= form.text_field :cidade, readonly: "true", class: "form-control" %>
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-sm-4">
         <div class="form-group">
           <%= form.label :estado %>
           <%= form.text_field :estado, readonly: "true", class: "form-control" %>

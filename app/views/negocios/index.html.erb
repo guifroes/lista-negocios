@@ -9,7 +9,7 @@
         <p class="card-text"><%= negocio.descricao %></p>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-sm-6">
             <% if negocio.site && !negocio.site.empty? %>
               <a href="https://<%= negocio.site %>"/" target="_blank" >
                 <i class="fas fa-globe-americas"></i>
@@ -17,7 +17,7 @@
               </a>
             <% end %>
           </div>
-          <div class="col-6">
+          <div class="col-sm-6">
           <% if negocio.email && !negocio.email.empty? %>
               <a href="mailto:<%= negocio.email %>" >
               <i class="far fa-envelope"></i>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-sm-6">
             <% if negocio.facebook && !negocio.facebook.empty? %>
               <a href="https://www.fb.com/<%= negocio.facebook %>"/" target="_blank">
                 <i class="fab fa-facebook-square"></i>
@@ -36,7 +36,7 @@
               </a>
             <% end %>
           </div>
-          <div class="col-6">
+          <div class="col-sm-6">
           <% if negocio.instagram && !negocio.instagram.empty? %>
             <a href="https://www.instagram.com/<%= negocio.instagram %>"/" target="_blank" >
               <i class="fab fa-instagram"></i>
@@ -47,13 +47,13 @@
         </div>
 
         <div class="row">
-          <div class="col-6">
+          <div class="col-sm-6">
           <% if negocio.whatsapp && !negocio.whatsapp.empty? %>
             <i class="fab fa-whatsapp"></i>
             <label><%= negocio.whatsapp %></label>
             <% end %>
           </div>
-          <div class="col-6">
+          <div class="col-sm-6">
             <% if negocio.telefone && !negocio.telefone.empty? %>
               <i class="fas fa-phone"></i>
               <label><%= negocio.telefone %></label>
@@ -62,7 +62,7 @@
           </div> 
         <% if is_current_user_owner(negocio)%>
           <div class="row">
-            <div class="col-12">
+            <div class="col-sm-12">
               <%= link_to "Editar", edit_negocio_path(negocio), class: "btn btn-primary btn-lg" %> 
             </div>
           </div>
