@@ -7,6 +7,26 @@
         <h3 class="card-title"><%= negocio.nome %></h3>
         <p class="text-muted font-italic"><%= negocio.categoria.nome %></p>
         <p class="card-text"><%= negocio.descricao %></p>
+
+        <div class="row">
+          <div class="col-6">
+            <% if negocio.site && !negocio.site.empty? %>
+              <a href="https://<%= negocio.site %>"/" >
+                <i class="fas fa-globe-americas"></i>
+                <label><%= negocio.site %></label>
+              </a>
+            <% end %>
+          </div>
+          <div class="col-6">
+          <% if negocio.email && !negocio.email.empty? %>
+              <a href="mailto:<%= negocio.instagram %>"/" >
+              <i class="far fa-envelope"></i>
+              <label><%= negocio.email %></label>
+            </a>
+            <% end %>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-6">
             <% if negocio.facebook && !negocio.facebook.empty? %>
@@ -25,6 +45,7 @@
             <% end %>
           </div>
         </div>
+
         <div class="row">
           <div class="col-6">
           <% if negocio.whatsapp && !negocio.whatsapp.empty? %>
